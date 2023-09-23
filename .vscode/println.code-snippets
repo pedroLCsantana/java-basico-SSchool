@@ -1,0 +1,10 @@
+{
+	"Print to console": {
+	"scope": "java",
+	"prefix": "sout",
+	"body": [
+		"System.out.println($1);"
+	],
+		"description": "println"
+	}
+}
