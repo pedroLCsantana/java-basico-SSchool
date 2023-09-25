@@ -1,0 +1,14 @@
+
+{
+	"Print to console": {
+	"scope": "java",
+	"prefix": "psvm",
+	"body": [
+		"public static void main(String[] args)",
+		"{",
+		"	$1",
+		"}"
+	],
+		"description": "println"
+	}
+}
