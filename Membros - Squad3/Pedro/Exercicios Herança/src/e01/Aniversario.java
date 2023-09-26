@@ -1,4 +1,6 @@
-class Aniversario
+package e01;
+
+public class Aniversario
 {
     short anoAtual = 2023;
 

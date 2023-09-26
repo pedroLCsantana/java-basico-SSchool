@@ -1,4 +1,5 @@
-class Pessoa
+package e01;
+public class Pessoa
 {
     private String primeiroNome;
     private String ultimoNome;
@@ -11,16 +12,16 @@ class Pessoa
     private String telefone;
 
     // CONSTRUTORES
-    Pessoa(){
+    public Pessoa(){
         
     }
 
-    Pessoa(String primeiroNome, String ultimoNome){
+    protected Pessoa(String primeiroNome, String ultimoNome){
         this.primeiroNome = primeiroNome;
         this.ultimoNome = ultimoNome;
     }
 
-    Pessoa(String primeiroNome, String ultimoNome, int dia, int mes, int ano){
+    protected Pessoa(String primeiroNome, String ultimoNome, int dia, int mes, int ano){
         this.primeiroNome = primeiroNome;
         this.ultimoNome = ultimoNome;
 
