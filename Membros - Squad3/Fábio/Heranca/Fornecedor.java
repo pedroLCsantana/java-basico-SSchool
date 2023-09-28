@@ -1,8 +1,8 @@
 package heranca;
 
 public class Fornecedor extends Pessoa {
-    double valorCredito;
-    double valorDivida;
+    private double valorCredito;
+    private double valorDivida;
 
     Fornecedor(){
     }
@@ -29,5 +29,7 @@ public class Fornecedor extends Pessoa {
 		this.valorDivida = valorDivida;
 	}
 
-    
+    public double obterSaldo(){
+        return this.valorCredito-this.valorDivida;
+    }
 }
