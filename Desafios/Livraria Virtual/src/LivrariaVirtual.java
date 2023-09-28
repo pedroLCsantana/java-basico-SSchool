@@ -11,17 +11,56 @@ public class LivrariaVirtual {
 	public static int numImpressos;
 	public static int numEletronicos;
 	public static int numVendas;
-	
+
+	public static void main(String[] args) {
+
+
+		// Menu
+
+		boolean toMenu = true;
+		do {
+			switch (menuInicial()) {
+
+				case 1 -> cadastrarLivros();
+
+				case 2 -> System.out.println("Escolha 2");
+
+				case 3 -> System.out.println("Escolha 3");
+
+				case 4 -> System.out.println("Escolha 4");
+
+				case 0 -> toMenu=false;
+
+				default -> System.out.println("Nenhuma opção");
+
+			}
+		}while(toMenu);
+	}
+
+	public static int menuInicial(){
+		System.out.println("===================== MENU ========================");
+		System.out.println("**Sair: 0");
+
+		System.out.println("Cadastrar um livro - 1");
+		System.out.println("Realizar uma venda - 2");
+		System.out.println("Listar todas os livros cadastrados - 3");
+		System.out.println("Listar todas as vendas de livros - 4");
+
+
+		System.out.print("\nEscolha uma das opções a cima: ");
+		Scanner read = new Scanner(System.in);
+		int opcao = read.nextInt();
+
+		return opcao;
+	}
+
 	public static void cadastrarLivros() {
 	
 		List<Livro> listaLivros = new ArrayList<Livro>();
-	//Livro livro = new Livro();
 		
 		
 		System.out.println("=====================CADASTRO DOS LIVROS========================");
-		
-		
-		
+
 		Scanner s = new Scanner(System.in);
 		
 		System.out.print("Deseja cadastrar um livro s/n: ");
@@ -85,9 +124,8 @@ public class LivrariaVirtual {
 		s.close();
 	}
 
-	public static void main(String[] args) {
-		cadastrarLivros();
 
-	}
+
+
 
 }
