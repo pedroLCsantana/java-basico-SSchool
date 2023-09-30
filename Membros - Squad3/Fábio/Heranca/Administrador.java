@@ -1,4 +1,4 @@
-package Heranca;
+package heranca;
 
 public class Administrador extends Empregado{
     
@@ -20,8 +20,10 @@ public class Administrador extends Empregado{
 		this.ajudaDeCusto = ajudaDeCusto;
 	}
 
-    public double calcularSalario(){
-        return this.salarioBase-(this.salarioBase*0.2);
-    }   
+   
+     public double calcularSalario(){
+        return super.calcularSalario()+ajudaDeCusto;
+    } 
+   
 		
 }
