@@ -7,6 +7,8 @@ public class Heranca {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
+		int x = 0;
+		
 		System.out.println();
 	 	System.out.println("*** ESCOLHA A SUA OPÇÃO ***");	 	
 	 	System.out.println("1 - Empregado");
@@ -22,42 +24,58 @@ public class Heranca {
 		Operario 		o1 = new Operario("Operario", "rua jlm", "71444444444", 5, 4000, 1000);
 		Vendedor 		v1 = new Vendedor("Vendedor", "rua ", "71444444444", 5, 5000, 1500);
 		
-		int x = sc.nextInt();
+				
+		x = sc.nextInt();
 		
 	  	while (x>0){	  		
 	  		int y = x;
   		
-  			if(y==1) {
-  				
-  				System.out.println(e1); 
-  				System.out.println(e1.calcularSalario());
-  				
-  			} else if(y==2){	  		
-	  		
-	  			System.out.println(f1); 
-	  			System.out.println(f1.obterSaldo());
+  			switch (y) {
+			
+	  			case 1: {
+					
+	  				System.out.println(e1); 
+	  				System.out.println(e1.calcularSalario());
+				} break;
 	  			
-  			} else if(y==3){
-	  				  		
-	  			System.out.println(a1);
-	  			System.out.println(a1.calcularSalario());
+	  			case 2: {
+					
+	  				System.out.println(f1); 
+		  			System.out.println(f1.obterSaldo());
+		  			 			
+				} break;
 	  			
-  			} else if(y==4){		  		
-	  		 
-	  			System.out.println(o1);
-				System.out.println(o1.calcularSalario());
+	  			case 3: {
+					
+	  				System.out.println(a1);
+		  			System.out.println(a1.calcularSalario());
+				} break;
+	  			
+				case 4: {
+								
+				  	System.out.println(o1);
+					System.out.println(o1.calcularSalario());			
+				} break;
 				
-  			} else if(y==5){ 
-	  			System.out.println(v1);
-				System.out.println(v1.calcularSalario());
-			}else {
-				System.out.println("Valor incorreto");
-			}
-
-	  	System.out.println("Saindo ...");
-	  	
-	  	sc.close();
+				case 5: {
+								
+				  	System.out.println(v1);
+					System.out.println(v1.calcularSalario());			
+				} break;
+		  			
+				
+				default: 
+					throw new IllegalArgumentException("Valor incorreto, por favor digite novamente: " + y);
+  			} 	break;  							
+  				  				  			
 	
-	  	}
+	  	}		
+	  	
+	  	System.out.println("Saindo ...");
+	  	sc.close();
 	}
 }
+	
+	
+	
+	
