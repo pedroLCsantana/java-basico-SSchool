@@ -4,7 +4,7 @@ import java.util.List;
 public class Venda {
 	
 	private List<Livro> livros = new ArrayList<Livro>();
-	private static int numVendas;
+	private static int qtVendas = 0;
 	private int numero;
 	private String cliente;
 	private float valor;
@@ -12,20 +12,20 @@ public class Venda {
 	public Venda() {
 	}
 
-	public Venda(int numVendas, int numero, String cliente, float valor) {
+	public Venda(int numero, String cliente, float valor) {
 		
-		this.numVendas = numVendas + 1;
+		Venda.qtVendas += 1;
 		this.numero = 1;
 		this.cliente = cliente;
 		this.valor = valor;
 	}
 
 	public int getNumVendas() {
-		return numVendas;
+		return qtVendas;
 	}
 
 	public void setNumVendas(int numVendas) {
-		this.numVendas = numVendas;
+		this.qtVendas = numVendas;
 	}
 
 	public int getNumero() {

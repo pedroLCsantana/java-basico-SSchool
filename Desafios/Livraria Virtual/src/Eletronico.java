@@ -1,6 +1,8 @@
 public class Eletronico extends Livro{
 
-	int tamanho;
+	private int tamanho;
+
+	private static int qtEletronicos = 0;
 	
 	Eletronico(){
 	}
@@ -8,6 +10,7 @@ public class Eletronico extends Livro{
 	public Eletronico(String titulo, String autores, String editora, float preco, int tamanho) {
 		super(titulo, autores, editora, preco);
 		this.tamanho = tamanho;
+		Eletronico.qtEletronicos += 1;
 	}
 
 	public int getTamanho() {

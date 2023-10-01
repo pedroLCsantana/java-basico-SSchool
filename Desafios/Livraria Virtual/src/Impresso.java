@@ -1,7 +1,9 @@
 public class Impresso extends Livro{
 	
-	float frete;
-	int estoque;
+	private float frete;
+	private int estoque;
+
+	private static int qtImpressos = 0;
 	
 	Impresso(){
 	}
@@ -10,6 +12,7 @@ public class Impresso extends Livro{
 		super(titulo, autores, editora, preco);
 		this.frete = frete;
 		this.estoque = estoque;
+		Impresso.qtImpressos += 1;
 	}
 
 	public float getFrete() {

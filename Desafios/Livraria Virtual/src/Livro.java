@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public abstract class Livro {
 
-	String titulo;
-	String autores;
-	String editora;
-	float preco;
-	
+	private String titulo;
+	private String autores;
+	private String editora;
+	private float preco;
+
 	Livro(){
 	}
 	

@@ -3,18 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class LivrariaVirtual {
-	
-	public static final int MAX_IMPRESSOS = 10;
-	public static final int MAX_ELETRONICOS = 20;
-	public static final int MAX_VENDAS = 50;
-	
-	public static int numImpressos;
-	public static int numEletronicos;
-	public static int numVendas;
+
+	protected static ArrayList<Livro> listLivrosCadastros = new ArrayList<>();
 
 	public static void main(String[] args) {
-
-
 		// Menu
 
 		boolean toMenu = true;
@@ -48,8 +40,19 @@ public class LivrariaVirtual {
 
 
 		System.out.print("\nEscolha uma das opções a cima: ");
-		Scanner read = new Scanner(System.in);
-		int opcao = read.nextInt();
+		int opcao = -1;
+		boolean bLoop = false;
+		do {
+			try {
+				Scanner read = new Scanner(System.in);
+				opcao = read.nextInt();
+				bLoop = false;
+			} catch (Exception e) {
+				bLoop = true;
+				System.out.print("Opção invalida! Digite um número: ");
+			}
+		}while (bLoop);
+
 
 		return opcao;
 	}
@@ -64,7 +67,7 @@ public class LivrariaVirtual {
 		Scanner s = new Scanner(System.in);
 		
 		System.out.print("Deseja cadastrar um livro s/n: ");
-		char opcao = s.next().charAt(0);
+		char opcao = s.next().toLowerCase().charAt(0);
 		
 		while(opcao == 's') {
 			
@@ -79,8 +82,8 @@ public class LivrariaVirtual {
 			System.out.print("Digite o preco do livro: ");
 			float preco = s.nextFloat();
 			System.out.println();
-			System.out.print("O livro impresso ou eletronico? ");
-			char opcaoLivro = s.next().charAt(0);
+			System.out.print("O livro é impresso, eletronico, ou ambos? ");
+			char opcaoLivro = s.next().toLowerCase().charAt(0);
 
 			if(opcaoLivro == 'i') {
 				System.out.print("Digite o frete: ");
@@ -88,40 +91,55 @@ public class LivrariaVirtual {
 				System.out.print("Digite a quantidade em estoque: ");
 				int estoque = s.nextInt();
 				listaLivros.add(new Impresso(titulo, autores, editora, preco, frete, estoque));
-				
-//				numImpressos++;
-//				
-//				if(numImpressos > MAX_IMPRESSOS) {
-//					System.out.println("Numero de livros no limite maximo!");
-//				}
+
 			}
 			
 			if(opcaoLivro == 'e') {
-				System.out.print("Digite o tamanho: ");
+				System.out.print("Digite o tamanho(KB): ");
 				int tamanho = s.nextInt();
 				
 				listaLivros.add(new Eletronico(titulo, autores, editora, preco, tamanho));
+			}
+
+			if(opcaoLivro == 'a') {
+				System.out.print("Digite o tamanho(KB): ");
+				int tamanho = s.nextInt();
+
+				System.out.print("Digite o frete: ");
+				float frete = s.nextFloat();
+				System.out.print("Digite a quantidade em estoque: ");
+				int estoque = s.nextInt();
+
+				listaLivros.add(new Eletronico(titulo, autores, editora, preco, tamanho));
+				listaLivros.add(new Impresso(titulo, autores, editora, preco, frete, estoque));
 			}
 			
 			System.out.println();
 			System.out.print("Deseja cadastrar um livro s/n: ");
 			System.out.println();
-			opcao = s.next().charAt(0);
-			
-			
-			
-			if(opcao == 'n') {
-				break;
-			}
+			opcao = s.next().toLowerCase().charAt(0);
 		}
 
+		boolean temCadastro = false;
 		for(Livro l : listaLivros) {
 			System.out.println(l);
+
+			for (Livro lc : listLivrosCadastros){
+				if(lc.getTitulo().equals(l.getTitulo())){
+					temCadastro = true;
+					System.out.println(l.getTitulo()+ " ja tem cadastro no sistema");
+					break;
+				}
+			}
+			if(!temCadastro){
+				listLivrosCadastros.add(l);
+				System.out.println("Livro adicionado no sistema!");
+			}
+
 			System.out.println("------------------------");
-			
 		}
-		
-		s.close();
+
+
 	}
 
 
