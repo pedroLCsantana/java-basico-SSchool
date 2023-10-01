@@ -40,9 +40,9 @@ public class Pessoa{
 
     public String toString(){
         return
-        "Nome" + this.nome +"\n" +
-        "Endereço"+ this.endereco+"\n" +
-        "Telefone"+ this.telefone+"\n";
+        "Nome: " + this.nome +" \n" +
+        "Endereço: "+ this.endereco+" \n" +
+        "Telefone: "+ this.telefone+" \n";
     }
 }
 
