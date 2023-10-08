@@ -7,6 +7,8 @@ import javax.persistence.Table;
 
 import entities.enums.Sexo;
 
+// testando os codigo com git
+
 @Entity
 
 @Table(name = "motorista")
