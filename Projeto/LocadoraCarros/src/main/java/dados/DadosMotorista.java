@@ -1,5 +1,6 @@
 package dados;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,7 +26,7 @@ public class DadosMotorista extends Motorista {
 		return em;
 	}
 	
-	public void alterarMotorista(String cpf, String dataNascimento) {
+	public void alterarMotorista(String cpf, LocalDate dataNascimento) {
 		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
@@ -37,7 +38,7 @@ public class DadosMotorista extends Motorista {
 	
 	
 
-	public void addMotorista(String nome, String dataNascimento, String cpf,String email, Sexo sexo, String numeroCNH) {
+	public void addMotorista(String nome, LocalDate dataNascimento, String cpf, String email, Sexo sexo, String numeroCNH) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		Motorista newProp = new Motorista(nome, dataNascimento, cpf, email, sexo, numeroCNH);
@@ -54,12 +55,12 @@ public class DadosMotorista extends Motorista {
 			List<Motorista> mot = em.createQuery("SELECT m FROM Motorista m", Motorista.class).getResultList();
 
 			for (Motorista m : mot) {
-				System.out.println(m.getNome()	 + " , " +
-						 m.getDataNascimento() 	 + " , " + 
-						 m.getCpf()				 + " , " +
-						 m.getEmail()			 + " , " +
-						 m.getSexo()			 + " , " +
-						 m.getNumeroCNH());
+				System.out.println("Nome: "+m.getNome()	 + " , " +
+						 "Nascimento: "+m.getDataNascimento() 	 + " , " +
+						 "CPF: "+m.getCpf()				 + " , " +
+						 "Email: "+m.getEmail()			 + " , " +
+						 "Sexo: "+m.getSexo()			 + " , " +
+						 "CNH: "+m.getNumeroCNH());
 			}
 			em.getTransaction().commit();
 			return mot;
@@ -73,11 +74,14 @@ public class DadosMotorista extends Motorista {
 
 		try {
 			em.getTransaction().begin();
-			Motorista mot = em.find(Motorista.class, cpf);
+ 			Motorista mot = em.find(Motorista.class, cpf);
 			em.remove(mot);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		finally {
+			fecharConexao();
 		}
 	}
 	

@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -16,7 +17,7 @@ public abstract class Pessoa implements Serializable {
 	 String nome;
 	
 	@Column
-	String dataNascimento;
+	LocalDate dataNascimento;
 	
 	@Column
 	protected
@@ -30,7 +31,7 @@ public abstract class Pessoa implements Serializable {
 	public Pessoa(){
 		}
 
-	public Pessoa(String nome, String dataNascimento, String cpf, String email, Sexo sexo) {
+	public Pessoa(String nome, LocalDate dataNascimento, String cpf, String email, Sexo sexo) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.cpf = cpf;
@@ -46,11 +47,11 @@ public abstract class Pessoa implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
