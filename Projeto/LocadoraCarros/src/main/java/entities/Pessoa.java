@@ -1,7 +1,6 @@
 package entities;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -9,27 +8,34 @@ import javax.persistence.MappedSuperclass;
 import entities.enums.Sexo;
 
 @MappedSuperclass
-public class Pessoa implements Serializable {
+public abstract class Pessoa implements Serializable {
+	
+	//public static final long serialVersionUID = 1L;
+
+	@Column
+	 String nome;
 	
 	@Column
-	private String nome;
+	String dataNascimento;
 	
 	@Column
-	private LocalDate dataNascimento;
+	protected
+	String cpf;
 	
 	@Column
-	private String cpf;
+	String email;
 	
-	private Sexo sexo;
+	Sexo sexo;
 	
 	public Pessoa(){
 		}
 
-	public Pessoa(String nome, LocalDate dataNascimento, String cpf, Sexo sexo) {
+	public Pessoa(String nome, String dataNascimento, String cpf, String email, Sexo sexo) {
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.cpf = cpf;
-		this.sexo = sexo;
+		this.email = email;
+		this.sexo = sexo;		
 	}
 
 	public String getNome() {
@@ -40,11 +46,11 @@ public class Pessoa implements Serializable {
 		this.nome = nome;
 	}
 
-	public LocalDate getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(LocalDate dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -62,6 +68,14 @@ public class Pessoa implements Serializable {
 
 	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }

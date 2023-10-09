@@ -11,7 +11,7 @@ import entities.enums.Sexo;
 
 public class DadosMotorista extends Motorista {
 	
-	//private static final long serialVersionUID = 1L;
+	//static final long serialVersionUID = 1L;
 	
 	private EntityManagerFactory emf;
 	private EntityManager em;
@@ -65,6 +65,19 @@ public class DadosMotorista extends Motorista {
 			return mot;
 		} finally {
 			fecharConexao();
+		}
+	}
+	
+	public void removerMotorista(String cpf) {
+		EntityManager em = emf.createEntityManager();
+
+		try {
+			em.getTransaction().begin();
+			Motorista mot = em.find(Motorista.class, cpf);
+			em.remove(mot);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
