@@ -7,6 +7,8 @@ import javax.persistence.Persistence;
 import entities.Motorista;
 import entities.enums.Sexo;
 
+import java.time.LocalDate;
+
 public class DadosMotorista extends Motorista {
 	private EntityManagerFactory emf;
 	private EntityManager em;
@@ -20,7 +22,7 @@ public class DadosMotorista extends Motorista {
 		return em;
 	}
 
-	public void addMotorista(String nome, String dataNascimento, String cpf, Sexo sexo, String numeroCNH) {
+	public void addMotorista(String nome, LocalDate dataNascimento, String cpf, Sexo sexo, String numeroCNH) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		Motorista newProp = new Motorista(nome, dataNascimento,cpf,sexo, numeroCNH);
