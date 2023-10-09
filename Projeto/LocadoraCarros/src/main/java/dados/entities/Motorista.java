@@ -7,6 +7,8 @@ import javax.persistence.Table;
 
 import entities.enums.Sexo;
 
+import java.time.LocalDate;
+
 // testando os codigo com git
 
 @Entity
@@ -22,7 +24,7 @@ public class Motorista extends Pessoa {
 		super();
 	}
 	
-	public Motorista(String nome, String dataNascimento, String cpf, Sexo sexo, String numeroCNH) {
+	public Motorista(String nome, LocalDate dataNascimento, String cpf, Sexo sexo, String numeroCNH) {
 		super(nome, dataNascimento, cpf, sexo);
 		this.numeroCNH = numeroCNH;
 	}
