@@ -19,7 +19,7 @@ class Tribonacci
 
 
         System.out.println("Digite quantos numeros da seguência Trigonacci irão aparecer: ");
-        int n = read.nextInt()
+        int n = read.nextInt();
         
          
         for(int i = 0; i <= n; i++)

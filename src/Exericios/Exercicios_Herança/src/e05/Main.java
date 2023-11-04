@@ -1,3 +1,5 @@
+package Exericios.Exercicios_Herança.src.e05;
+
 public class Main {
     public static void main(String[] args) {
         Operario operario1 = new Operario("Pedro", "Roberto", 10,12,1998, 10000, 0.1f);

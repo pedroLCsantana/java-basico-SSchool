@@ -1,10 +1,11 @@
-import Empregado;
+package Exericios.Exercicios_Herança.src.e05;
+import Exericios.Exercicios_Herança.src.e03.Empregado;
 
 public class Operario extends Empregado {
 
     double valorProducao; // dinheiro por produção
     float comissaoPor100; // porcentagem
-    protected Operario(String primeiroNome, String ultimoNome, int dia, int mes, int ano, double salarioBase, float imposto)
+    public Operario(String primeiroNome, String ultimoNome, int dia, int mes, int ano, double salarioBase, float imposto)
     {
         super(primeiroNome, ultimoNome, dia, mes, ano, salarioBase, imposto);
     }

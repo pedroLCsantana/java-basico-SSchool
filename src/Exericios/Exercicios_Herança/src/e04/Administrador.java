@@ -1,4 +1,7 @@
-import Empregado;
+package Exericios.Exercicios_Herança.src.e04;
+
+
+import Exericios.Exercicios_Herança.src.e03.Empregado;
 
 public class Administrador extends Empregado {
 

@@ -1,3 +1,5 @@
+package Exericios.Exercicios_Herança.src.e01;
+
 public class Pessoa
 {
     private String primeiroNome;

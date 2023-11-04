@@ -5,7 +5,7 @@ class Carro{
     private String modelo;
     private double velocidadeAtual;
     private double velocidadeMaxima;
-    private Motor motor;
+    //private Motor motor;
     private String chassi;
 
     public Carro(String chassi)

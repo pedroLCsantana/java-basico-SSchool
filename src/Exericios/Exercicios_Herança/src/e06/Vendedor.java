@@ -1,10 +1,11 @@
-import Empregado;
+package Exericios.Exercicios_Herança.src.e06;
+import Exericios.Exercicios_Herança.src.e03.Empregado;
 
 public class Vendedor extends Empregado {
 
     private double valorVendas;
     private float comissaoPor100;
-    protected Vendedor(String primeiroNome, String ultimoNome, int dia, int mes, int ano, double salarioBase, float imposto)
+    public Vendedor(String primeiroNome, String ultimoNome, int dia, int mes, int ano, double salarioBase, float imposto)
     {
         super(primeiroNome, ultimoNome, dia, mes, ano, salarioBase, imposto);
     }

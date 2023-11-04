@@ -1,4 +1,5 @@
-import Pessoa;
+package Exericios.Exercicios_Herança.src.e03;
+import Exericios.Exercicios_Herança.src.e01.Pessoa;
 
 public class Empregado extends Pessoa {
 
