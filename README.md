@@ -1,3 +1,4 @@
-# Squad3
+# Repositório java-basico-SSchool
 
-## Repositório para as atividades do grupo Squad3
+## Repositório destinado a registrar as atividades e desafios do curso basico de java menistrado por Tiago Lopes
+
